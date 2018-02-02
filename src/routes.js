@@ -6,8 +6,9 @@ import AppWrapper from './containers/app/AppWrapper';
 
 export const namedRoutes = {
   app: '/app',
-  dashboard: '/app/dashboard',
-  settings: '/app/settings'
+  market: '/app/market',
+  portfolio: '/app/portfolio',
+  clients: '/app/clients'
 };
 
 export default (

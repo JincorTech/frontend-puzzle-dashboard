@@ -1,0 +1,56 @@
+@use postcss-short;
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0 0;
+  border-bottom: 2px solid #535353;
+}
+
+.logo {
+  color: #535353;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.logout {
+  & button {
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0;
+    outline: none;
+  }
+}
+
+.link {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.1s linear all;
+
+  &::after {
+    content: '';
+    position: absolute * * -2px 0;
+    width: 100%;
+    height: 0;
+    background-color: #407fbe;
+    transition: 0.1s linear all;
+  }
+}
+
+.activeLink {
+  composes: link;
+  color: #407fbe;
+
+  &::after {
+    height: 2px;
+  }
+}
