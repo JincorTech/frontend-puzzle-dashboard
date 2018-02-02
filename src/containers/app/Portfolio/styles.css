@@ -1,0 +1,28 @@
+.layout {
+  padding: 0 0 40px 0;
+}
+
+.row {
+  display: flex;
+  padding: 40px 0;
+}
+
+.summary {
+  background-color: #fff;
+  opacity: 0.1;
+  width: 440px;
+  height: 370px;
+}
+
+.chart {
+  background-color: #fff;
+  opacity: 0.1;
+  margin-left: 40px;
+  width: 800px;
+  height: 370px;
+}
+
+.table {
+  width: 100%;
+  height: 400px;
+}

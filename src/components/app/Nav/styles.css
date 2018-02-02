@@ -12,9 +12,14 @@
   font-size: 20px;
   font-weight: bold;
   padding: 10px 0;
+  width: 150px;
+  text-align: left;
 }
 
 .logout {
+  width: 150px;
+  text-align: right;
+
   & button {
     background-color: transparent;
     color: #fff;

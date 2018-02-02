@@ -1,0 +1,14 @@
+.asset {
+  & small {
+    font-size: 14px;
+    margin: 0 0 0 8px;
+  }
+}
+
+.red {
+  color: #ff5b5b;
+}
+
+.green {
+  color: #49cf6a;
+}
