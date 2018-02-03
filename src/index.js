@@ -6,7 +6,7 @@ import { AppContainer } from 'react-hot-loader';
 
 import 'normalize.css';
 import './assets/main.css';
-import './assets/fonts/Roboto/stylesheet.css';
+import './assets/fonts/SF/stylesheet.css';
 
 import configureStore, { history } from './redux/configureStore';
 import routes from './routes';
