@@ -1,0 +1,84 @@
+@use postcss-short;
+
+.popup {
+  position: relative;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.control {
+  margin: 0 -10px;
+
+  & .cButton {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    color: #fff;
+    opacity: 0.75;
+    padding: 5px;
+    margin: 0 10px;
+    outline: none;
+    transition: 0.1s linear all;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.body {
+  margin-top: 25px;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  & td {
+    padding: 10px 0;
+  }
+}
+
+.tbody {
+  font-size: 16px;
+  font-weight: normal;
+  color: #999;
+
+  & tr {
+    cursor: default;
+    opacity: 0.75;
+    transition: 0.1s linear all;
+
+    & button {
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      padding: 0;
+      margin: 0;
+      color: #ff5c5c;
+      outline: none;
+      opacity: 0;
+      transition: 0.1s linear all;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      & button {
+        opacity: 1;
+      }
+    }
+  }
+}
