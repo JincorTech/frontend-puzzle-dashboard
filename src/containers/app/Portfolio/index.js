@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { openAssetTxsPopup } from '../../../redux/modules/app/assetTxsPopup';
 
 import PortfolioTable from '../../../components/app/PortfolioTable';
 import PortfolioSummary from '../../../components/app/PortfolioSummary';
@@ -7,7 +10,9 @@ import ChartSelector from '../ChartSelector';
 import s from './styles.css';
 
 const Portfolio = (props) => {
-  console.log(props);
+  const {
+    openAssetTxsPopup
+  } = props;
 
   return (
     <div className={s.layout}>
@@ -21,10 +26,16 @@ const Portfolio = (props) => {
       </div>
 
       <div className={s.table}>
-        <PortfolioTable/>
+        <PortfolioTable
+          openAssetTxsPopup={openAssetTxsPopup}/>
       </div>
     </div>
   );
 };
 
-export default Portfolio;
+export default connect(
+  null,
+  {
+    openAssetTxsPopup
+  }
+)(Portfolio);

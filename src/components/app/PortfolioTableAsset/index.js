@@ -3,8 +3,6 @@ import React from 'react';
 import s from './styles.css';
 
 const PortfolioTableAsset = (props) => {
-  console.log('portfolio table asset props', props);
-
   const {
     asset,
     symbol,
@@ -12,7 +10,8 @@ const PortfolioTableAsset = (props) => {
     price,
     exposure,
     profitLoss,
-    weight
+    weight,
+    openAssetTxsPopup
   } = props;
 
   const renderPrice = () => (price.change < 0
@@ -24,7 +23,7 @@ const PortfolioTableAsset = (props) => {
     : <td className={s.green}>${profitLoss.value}<small>{profitLoss.change}</small></td>);
 
   return (
-    <tr className={s.asset}>
+    <tr className={s.asset} onClick={() => openAssetTxsPopup(symbol)}>
       <td>{asset}</td>
       <td>{qty} {symbol}</td>
       {renderPrice()}

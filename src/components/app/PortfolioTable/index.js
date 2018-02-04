@@ -53,7 +53,9 @@ const DATA = [
 ];
 
 const PortfolioTable = (props) => {
-  console.log('portfolio table props', props);
+  const {
+    openAssetTxsPopup
+  } = props;
 
   return (
     <div>
@@ -70,7 +72,12 @@ const PortfolioTable = (props) => {
         </thead>
 
         <tbody className={s.tbody}>
-          {DATA.map((asset) => (<PortfolioTableAsset key={asset.symbol} {...asset}/>))}
+          {DATA.map((asset) => (
+            <PortfolioTableAsset
+              key={asset.symbol}
+              {...asset}
+              openAssetTxsPopup={openAssetTxsPopup}/>
+          ))}
         </tbody>
       </table>
     </div>
