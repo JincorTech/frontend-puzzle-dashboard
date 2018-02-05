@@ -1,0 +1,56 @@
+.green {
+  color: #4acf6b;
+}
+
+.red {
+  color: #ff5b5b;
+}
+
+.label {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.assetValue {
+  & .value {
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+
+    & small {
+      margin-left: 10px;
+      font-size: 25px;
+    }
+  }
+}
+
+.changes {
+  margin: 18px -20px 0;
+  display: flex;
+}
+
+.changesSecond {
+  margin: 40px -20px 0;
+  display: flex;
+}
+
+.change {
+  margin: 0 20px;
+  justify-content: flex-start;
+
+  & .value {
+    font-size: 20px;
+  }
+
+  & .valueRed {
+    font-size: 20px;
+    color: #ff5b5b;
+  }
+
+  & .valueGreen {
+    font-size: 20px;
+    color: #4acf6b;
+  }
+}

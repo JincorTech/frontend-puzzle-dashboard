@@ -1,0 +1,17 @@
+.control {
+  margin: 0 -5px;
+  text-align: right;
+
+  & button {
+    background-color: transparent;
+    color: #fff;
+    opacity: 0.25;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    padding: 5px;
+    margin: 0 5px;
+    outline: none;
+    cursor: pointer;
+  }
+}

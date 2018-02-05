@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 import { namedRoutes } from '../../../routes';
 
 import Nav from '../../../components/app/Nav';
-import Dashboard from '../../../components/app/Dashboard';
-import Settings from '../../../components/app/Settings';
+import Clients from '../Clients';
+import Portfolio from '../Portfolio';
+import Market from '../Market';
+
+import s from './styles.css';
 
 class AppWrapper extends Component {
   render() {
     return (
-      <div className="app">
+      <div className={s.wrapper}>
         <Nav/>
         <Switch>
-          <Route exact path={namedRoutes.dashboard} component={Dashboard}/>
-          <Route exact path={namedRoutes.settings} component={Settings}/>
-          <Redirect from={namedRoutes.app} to={namedRoutes.dashboard}/>
+          <Route exact path={namedRoutes.market} component={Market}/>
+          <Route exact path={namedRoutes.portfolio} component={Portfolio}/>
+          <Route exact path={namedRoutes.clients} component={Clients}/>
         </Switch>
       </div>
     );

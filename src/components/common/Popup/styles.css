@@ -1,0 +1,19 @@
+@use postcss-short;
+
+.background {
+  size: 100%;
+  min-height: 100%;
+  position: fixed 0 0 0 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 999;
+  overflow-y: scroll;
+}
+
+.popup {
+  width: 270px;
+  background-color: #1c1c1c;
+  border-radius: 4px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  margin: 180px auto;
+}

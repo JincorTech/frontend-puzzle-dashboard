@@ -1,0 +1,21 @@
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  & td {
+    padding: 15px 0;
+    border-bottom: 1px solid #535353;
+  }
+}
+
+.thead {
+  font-size: 16px;
+  font-weight: bold;
+  color: #535353;
+}
+
+.tbody {
+  font-size: 18px;
+  font-weight: normal;
+  color: #fff;
+}

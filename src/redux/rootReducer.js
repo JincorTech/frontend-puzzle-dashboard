@@ -2,12 +2,14 @@ import { combineReducers, routerReducer as routing } from 'redux-seamless-immuta
 import { reducer as form } from 'redux-form';
 
 import app from './modules/app/app';
+import assetTxsPopup from './modules/app/assetTxsPopup';
 
 export default combineReducers({
   routing,
   form,
 
   app: combineReducers({
-    app
+    app,
+    assetTxsPopup
   })
 });
