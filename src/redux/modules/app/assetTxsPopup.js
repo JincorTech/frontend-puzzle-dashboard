@@ -1,15 +1,23 @@
 import { from } from 'seamless-immutable';
-import { createReducer, createAction } from '../../../utils/actions';
+import { createReducer, createAction, createAsyncAction } from '../../../utils/actions';
 
 export const OPEN_ASSET_TXS_POPUP = 'app/assetTxsPopup/OPEN_ASSET_TXS_POPUP';
 export const CLOSE_ASSET_TXS_POPUP = 'app/assetTxsPopup/CLOSE_ASSET_TXS_POPUP';
+export const FETCH_ASSET_TXS = 'app/assetTxsPopup/FETCH_ASSET_TXS';
 
 export const openAssetTxsPopup = createAction(OPEN_ASSET_TXS_POPUP);
 export const closeAssetTxsPopup = createAction(CLOSE_ASSET_TXS_POPUP);
+export const fetchAssetTxs = createAsyncAction(FETCH_ASSET_TXS);
 
 const initialState = from({
   open: false,
-  symbol: ''
+  fetching: false,
+  symbol: '',
+  data: {
+    sumbol: '',
+    asset: '',
+    txs: []
+  }
 });
 
 export default createReducer({
@@ -21,9 +29,25 @@ export default createReducer({
   ),
 
   [CLOSE_ASSET_TXS_POPUP]: (state) => (
+    state.merge(initialState)
+  ),
+
+  [fetchAssetTxs.REQUEST]: (state) => (
     state.merge({
-      open: false,
-      symbol: ''
+      fetching: true
+    })
+  ),
+
+  [fetchAssetTxs.SUCCESS]: (state, { payload }) => (
+    state.merge({
+      fetching: false,
+      data: payload
+    })
+  ),
+
+  [fetchAssetTxs.FAILURE]: (state) => (
+    state.merge({
+      fetching: false
     })
   )
 }, initialState);

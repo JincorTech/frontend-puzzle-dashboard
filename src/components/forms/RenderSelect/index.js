@@ -18,8 +18,8 @@ const RenderInput = (props) => {
       {...restProps}
       className="Select-dark"
       value={input.value}
-      onChange={(value) => input.onChange(value.value)}
-      onBlur={() => input.onBlur(input.value)}
+      onChange={(value) => input.onChange(value.id)}
+      onBlur={() => input.onBlur(input.id)}
       options={options}/>
   );
 };

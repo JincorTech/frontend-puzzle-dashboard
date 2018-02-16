@@ -13,7 +13,9 @@ const AddTxAssetForm = (props) => {
     handleSubmit,
     invalid,
     error,
-    fetching
+    fetching,
+    exchanges,
+    currencies
   } = props;
 
   const renderButton = () =>
@@ -25,10 +27,24 @@ const AddTxAssetForm = (props) => {
     <form
       className={s.form}
       onSubmit={handleSubmit}>
+
+      {error ? <div className={s.error}>{error}</div> : null}
+
+      <div className={s.field}>
+        <Field
+          component={RenderSelect}
+          clearable={false}
+          placeholder="Select asset..."
+          valueKey="id"
+          labelKey="name"
+          options={currencies}
+          name="asset"/>
+      </div>
+
       <div className={s.field}>
         <Field
           component={RenderInput}
-          name="quantity"
+          name="value"
           type="text"
           placeholder="Quantity"
           validate={required}/>
@@ -46,7 +62,7 @@ const AddTxAssetForm = (props) => {
       <div className={s.field}>
         <Field
           component={RenderInput}
-          name="date"
+          name="timestamp"
           type="date"
           placeholder="Date"
           validate={required}/>
@@ -56,12 +72,10 @@ const AddTxAssetForm = (props) => {
         <Field
           component={RenderSelect}
           clearable={false}
-          searchable={false}
           placeholder="Select exchange..."
-          options={[
-            { value: '0x00', label: 'Bittrex' },
-            { value: '0x01', label: 'Poloniex' }
-          ]}
+          valueKey="id"
+          labelKey="name"
+          options={exchanges}
           name="exchange"/>
       </div>
 
@@ -73,7 +87,12 @@ const AddTxAssetForm = (props) => {
 const FormComponent = reduxForm({
   form: 'addTxAsset',
   initialValues: {
-    quantity: ''
+    type: 'buy',
+    asset: '',
+    value: '',
+    price: '',
+    timestamp: '',
+    exchange: ''
   }
 })(AddTxAssetForm);
 
