@@ -1,0 +1,17 @@
+.input {
+  height: 43px;
+  font-size: 20px;
+  color: #999;
+  background-color: transparent;
+  font-weight: bold;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.1s linear all;
+}
+
+.wrapper {
+  position: relative;
+}
