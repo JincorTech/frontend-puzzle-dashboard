@@ -3,6 +3,8 @@ import { reducer as form } from 'redux-form';
 
 import app from './modules/app/app';
 import assetTxsPopup from './modules/app/assetTxsPopup';
+import addTxAssetPopup from './modules/app/addTxAssetPopup';
+import sellTxAssetPopup from './modules/app/sellTxAssetPopup';
 
 export default combineReducers({
   routing,
@@ -10,6 +12,8 @@ export default combineReducers({
 
   app: combineReducers({
     app,
-    assetTxsPopup
+    assetTxsPopup,
+    addTxAssetPopup,
+    sellTxAssetPopup
   })
 });

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import AssetTxsPopup from '../AssetTxsPopup';
+import AddTxAssetPopup from '../AddTxAssetPopup';
+import SellTxAssetPopup from '../SellTxAssetPopup';
 
 class App extends Component {
   render() {
@@ -10,6 +12,8 @@ class App extends Component {
       <div>
         <div>{children}</div>
         <AssetTxsPopup/>
+        <AddTxAssetPopup/>
+        <SellTxAssetPopup/>
       </div>
     );
   }
